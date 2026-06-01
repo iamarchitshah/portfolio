@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Archit Shah – Full Stack Developer, AI Enthusiast & Blockchain Developer. Premium Portfolio." />
+  <meta name="keywords" content="Archit Shah, Full Stack Developer, AI, Blockchain, Portfolio" />
+  <title>Archit Shah | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===== PAGE LOADER ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">AS</div>
+      <div class="loader-bar"><span></span></div>
+      <p class="loader-text">Initializing Portfolio<span class="dots">...</span></p>
+    </div>
+  </div>
+
+  <!-- ===== SCROLL PROGRESS ===== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>AS<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#certifications" class="nav-link">Certs</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="sun">☀</span><span class="moon">◐</span>
+      </button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== FLOATING SOCIAL BAR ===== -->
+  <div class="social-float">
+    <a href="https://github.com/iamarchitshah" target="_blank" class="social-float-link" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/archit-shah-00998739b/" target="_blank" class="social-float-link" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="mailto:archit2017@gmail.com" class="social-float-link" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+    </a>
+    <a href="https://twitter.com/" target="_blank" class="social-float-link" aria-label="Twitter">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <div class="social-float-line"></div>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero-section">
+      <canvas id="particleCanvas"></canvas>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-tag reveal-up">
+          <span class="tag-dot"></span>Available for opportunities
+        </div>
+        <h1 class="hero-name reveal-up delay-1">
+          Hello, I'm<br /><span class="gradient-text name-text">Archit Shah</span>
+        </h1>
+        <div class="hero-title reveal-up delay-2">
+          <span class="title-static">I'm a </span>
+          <span class="typed-text" id="typedText"></span><span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc reveal-up delay-3">
+          Crafting intelligent digital experiences at the intersection of Full Stack, AI, and Blockchain technology. Turning complex problems into elegant solutions.
+        </p>
+        <div class="hero-buttons reveal-up delay-4">
+          <a href="#" class="btn btn-primary magnetic">
+            <span>Download Resume</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost magnetic">
+            <span>Let's Talk</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrap reveal-right delay-2">
+        <div class="hero-image-glow"></div>
+        <div class="hero-image-ring ring-1"></div>
+        <div class="hero-image-ring ring-2"></div>
+        <div class="hero-image-ring ring-3"></div>
+        <div class="hero-avatar">
+          <div class="avatar-initials">AS</div>
+          <div class="avatar-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+        <div class="hero-float-card card-1">
+          <span class="fc-icon">🚀</span>
+          <div><strong>5+</strong><small>Projects</small></div>
+        </div>
+        <div class="hero-float-card card-2">
+          <span class="fc-icon">⚡</span>
+          <div><strong>AI</strong><small>Focused</small></div>
+        </div>
+      </div>
+      <a href="#about" class="hero-scroll-cta">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+      </a>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">01. About</span>
+          <h2 class="section-title">Behind the <span class="gradient-text">Code</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal-left">
+            <p class="about-lead">I'm a passionate <strong>Computer Science student</strong> specializing in full stack development, artificial intelligence, and blockchain technology.</p>
+            <p>With a strong foundation in both frontend and backend technologies, I love building scalable, user-centric applications that solve real problems. My curiosity drives me toward cutting-edge domains — from training ML models to deploying smart contracts on Ethereum.</p>
+            <p>When not coding, I'm exploring new tech stacks, contributing to open source, or participating in hackathons to sharpen my skills.</p>
+            <div class="about-tags">
+              <span class="tag">Problem Solver</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Hackathons</span>
+              <span class="tag">Research</span>
+            </div>
+          </div>
+          <div class="about-stats reveal-right">
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-count="20">0</div>
+              <div class="stat-label">Projects Completed</div>
+              <div class="stat-icon">📦</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-count="15">0</div>
+              <div class="stat-label">Technologies Learned</div>
+              <div class="stat-icon">⚙️</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-count="8">0</div>
+              <div class="stat-label">Certifications</div>
+              <div class="stat-icon">🏆</div>
+            </div>
+            <div class="stat-card glass-card">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label">Internships</div>
+              <div class="stat-icon">💼</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">02. Skills</span>
+          <h2 class="section-title">Tech <span class="gradient-text">Arsenal</span></h2>
+        </div>
+        <div class="skills-filter reveal-up delay-1">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="database">Database</button>
+          <button class="filter-btn" data-filter="aiml">AI/ML</button>
+          <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+          <button class="filter-btn" data-filter="cloud">Cloud</button>
+        </div>
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Frontend -->
+          <div class="skill-card glass-card reveal-up" data-category="frontend">
+            <div class="skill-icon">🌐</div>
+            <div class="skill-info">
+              <span class="skill-name">HTML5</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <span class="skill-pct">95%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-1" data-category="frontend">
+            <div class="skill-icon">🎨</div>
+            <div class="skill-info">
+              <span class="skill-name">CSS3</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-2" data-category="frontend">
+            <div class="skill-icon">⚡</div>
+            <div class="skill-info">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-3" data-category="frontend">
+            <div class="skill-icon">⚛️</div>
+            <div class="skill-info">
+              <span class="skill-name">React</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+          <!-- Backend -->
+          <div class="skill-card glass-card reveal-up" data-category="backend">
+            <div class="skill-icon">🟢</div>
+            <div class="skill-info">
+              <span class="skill-name">Node.js</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <span class="skill-pct">82%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-1" data-category="backend">
+            <div class="skill-icon">☕</div>
+            <div class="skill-info">
+              <span class="skill-name">Java</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <span class="skill-pct">78%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-2" data-category="backend">
+            <div class="skill-icon">🐍</div>
+            <div class="skill-info">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <!-- Database -->
+          <div class="skill-card glass-card reveal-up" data-category="database">
+            <div class="skill-icon">🗄️</div>
+            <div class="skill-info">
+              <span class="skill-name">MySQL</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-1" data-category="database">
+            <div class="skill-icon">🍃</div>
+            <div class="skill-info">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <!-- AI/ML -->
+          <div class="skill-card glass-card reveal-up" data-category="aiml">
+            <div class="skill-icon">🧠</div>
+            <div class="skill-info">
+              <span class="skill-name">TensorFlow</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-1" data-category="aiml">
+            <div class="skill-icon">🔬</div>
+            <div class="skill-info">
+              <span class="skill-name">Scikit-learn</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+            </div>
+            <span class="skill-pct">72%</span>
+          </div>
+          <!-- Blockchain -->
+          <div class="skill-card glass-card reveal-up" data-category="blockchain">
+            <div class="skill-icon">⛓️</div>
+            <div class="skill-info">
+              <span class="skill-name">Solidity</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-1" data-category="blockchain">
+            <div class="skill-icon">🔷</div>
+            <div class="skill-info">
+              <span class="skill-name">Ethereum</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <!-- Cloud -->
+          <div class="skill-card glass-card reveal-up" data-category="cloud">
+            <div class="skill-icon">☁️</div>
+            <div class="skill-info">
+              <span class="skill-name">AWS</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+            <span class="skill-pct">65%</span>
+          </div>
+          <div class="skill-card glass-card reveal-up delay-1" data-category="cloud">
+            <div class="skill-icon">🐙</div>
+            <div class="skill-info">
+              <span class="skill-name">Git / GitHub</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <span class="skill-pct">90%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">03. Projects</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card glass-card tilt-card reveal-up">
+            <div class="project-img" style="--proj-hue: 200deg;">
+              <div class="proj-bg-icon">🤖</div>
+            </div>
+            <div class="project-content">
+              <div class="project-num">01</div>
+              <h3 class="project-name">AI Resume Analyzer</h3>
+              <p class="project-desc">An intelligent NLP-powered tool that parses resumes, scores them against job descriptions, and provides actionable improvement suggestions using ML models.</p>
+              <div class="project-tech">
+                <span>Python</span><span>NLP</span><span>Flask</span><span>React</span>
+              </div>
+              <div class="project-links">
+                <a href="https://resumenimble.vercel.app/" class="proj-btn">Live Demo ↗</a>
+                <a href="#" class="proj-btn proj-btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card tilt-card reveal-up delay-1">
+            <div class="project-img" style="--proj-hue: 270deg;">
+              <div class="proj-bg-icon">🗳️</div>
+            </div>
+            <div class="project-content">
+              <div class="project-num">02</div>
+              <h3 class="project-name">Blockchain Voting System</h3>
+              <p class="project-desc">Decentralized e-voting platform built on Ethereum with Solidity smart contracts. Ensures transparent, tamper-proof, and anonymous voting with phase-based lifecycle management.</p>
+              <div class="project-tech">
+                <span>Solidity</span><span>Ethereum</span><span>Web3.js</span><span>React</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn">Live Demo ↗</a>
+                <a href="#" class="proj-btn proj-btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card tilt-card reveal-up delay-2">
+            <div class="project-img" style="--proj-hue: 160deg;">
+              <div class="proj-bg-icon">🏥</div>
+            </div>
+            <div class="project-content">
+              <div class="project-num">03</div>
+              <h3 class="project-name">Secure Patient Records</h3>
+              <p class="project-desc">HIPAA-compliant patient record management system with end-to-end encryption, role-based access, and blockchain audit trail for sensitive medical data.</p>
+              <div class="project-tech">
+                <span>Node.js</span><span>MongoDB</span><span>Blockchain</span><span>JWT</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn">Live Demo ↗</a>
+                <a href="#" class="proj-btn proj-btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card glass-card tilt-card reveal-up delay-3">
+            <div class="project-img" style="--proj-hue: 30deg;">
+              <div class="proj-bg-icon">🎟️</div>
+            </div>
+            <div class="project-content">
+              <div class="project-num">04</div>
+              <h3 class="project-name">Online Ticket Booking</h3>
+              <p class="project-desc">Full-stack event ticket booking platform with real-time seat selection, Stripe payments, QR code generation, and automated email confirmations.</p>
+              <div class="project-tech">
+                <span>React</span><span>Node.js</span><span>MySQL</span><span>Stripe</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn">Live Demo ↗</a>
+                <a href="#" class="proj-btn proj-btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="project-card glass-card tilt-card reveal-up delay-4">
+            <div class="project-img" style="--proj-hue: 0deg;">
+              <div class="proj-bg-icon">🔍</div>
+            </div>
+            <div class="project-content">
+              <div class="project-num">05</div>
+              <h3 class="project-name">OSINT Investigation Tool</h3>
+              <p class="project-desc">Open-source intelligence gathering tool that aggregates data from multiple public sources, performs social graph analysis, and generates investigation reports.</p>
+              <div class="project-tech">
+                <span>Python</span><span>Selenium</span><span>Graph DB</span><span>FastAPI</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="proj-btn">Live Demo ↗</a>
+                <a href="#" class="proj-btn proj-btn-ghost">GitHub</a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section exp-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">04. Experience</span>
+          <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="tl-header">
+                <div>
+                  <h3 class="tl-role">Full Stack Developer Intern</h3>
+                  <span class="tl-company">TechVision Solutions Pvt. Ltd.</span>
+                </div>
+                <span class="tl-date">Jun 2024 – Aug 2024</span>
+              </div>
+              <p class="tl-desc">Built and maintained RESTful APIs using Node.js and Express. Developed responsive UI components with React. Integrated AWS services for file storage and deployment. Collaborated in an Agile team of 8 developers.</p>
+              <div class="tl-tags">
+                <span>React</span><span>Node.js</span><span>AWS</span><span>Agile</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="tl-header">
+                <div>
+                  <h3 class="tl-role">AI/ML Research Intern</h3>
+                  <span class="tl-company">DataMinds Labs</span>
+                </div>
+                <span class="tl-date">Dec 2023 – Feb 2024</span>
+              </div>
+              <p class="tl-desc">Developed and trained NLP models for text classification. Implemented data preprocessing pipelines using Pandas and NumPy. Contributed to a research paper on transformer-based sentiment analysis achieving 94% accuracy.</p>
+              <div class="tl-tags">
+                <span>Python</span><span>TensorFlow</span><span>NLP</span><span>Research</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="tl-header">
+                <div>
+                  <h3 class="tl-role">Freelance Web Developer</h3>
+                  <span class="tl-company">Self-employed</span>
+                </div>
+                <span class="tl-date">2022 – Present</span>
+              </div>
+              <p class="tl-desc">Delivered 10+ custom websites and web applications for clients across e-commerce, healthcare, and education sectors. Managed client communication, requirements gathering, and post-deployment support.</p>
+              <div class="tl-tags">
+                <span>WordPress</span><span>React</span><span>PHP</span><span>Client Management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-card">
+              <div class="tl-header">
+                <div>
+                  <h3 class="tl-role">Blockchain Workshop Trainer</h3>
+                  <span class="tl-company">College Tech Club</span>
+                </div>
+                <span class="tl-date">Sep 2023</span>
+              </div>
+              <p class="tl-desc">Conducted a 2-day hands-on workshop for 60+ students on Ethereum development, Solidity programming, and DApp architecture. Created workshop materials and coding exercises.</p>
+              <div class="tl-tags">
+                <span>Solidity</span><span>Teaching</span><span>Ethereum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="section edu-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">05. Education</span>
+          <h2 class="section-title">Academic <span class="gradient-text">Path</span></h2>
+        </div>
+        <div class="edu-timeline">
+          <div class="edu-item glass-card reveal-up">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-content">
+              <h3>B.Tech in Computer Science & Engineering</h3>
+              <span class="edu-institute">CHARUSAT University, Anand, Gujarat</span>
+              <div class="edu-meta">
+                <span class="edu-date">📅 2021 – 2025</span>
+                <span class="edu-grade">CGPA: 8.7 / 10</span>
+              </div>
+              <p>Specialization in AI & Data Science. Courses include Machine Learning, Blockchain Technology, Cloud Computing, and Advanced Algorithms.</p>
+            </div>
+          </div>
+          <div class="edu-item glass-card reveal-up delay-1">
+            <div class="edu-icon">📚</div>
+            <div class="edu-content">
+              <h3>Higher Secondary (Science – PCM + CS)</h3>
+              <span class="edu-institute">Gujarat State Board</span>
+              <div class="edu-meta">
+                <span class="edu-date">📅 2019 – 2021</span>
+                <span class="edu-grade">Score: 87.4%</span>
+              </div>
+              <p>Strong foundation in Mathematics, Physics, and Computer Science. School topper in computer science subject.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section id="certifications" class="section cert-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">06. Certifications</span>
+          <h2 class="section-title">Credentials & <span class="gradient-text">Badges</span></h2>
+        </div>
+        <div class="cert-grid">
+          <div class="cert-card glass-card reveal-up">
+            <div class="cert-ribbon">Verified</div>
+            <div class="cert-icon">☁️</div>
+            <h3>AWS Cloud Practitioner</h3>
+            <span class="cert-issuer">Amazon Web Services</span>
+            <span class="cert-date">2024</span>
+          </div>
+          <div class="cert-card glass-card reveal-up delay-1">
+            <div class="cert-ribbon">Verified</div>
+            <div class="cert-icon">🧠</div>
+            <h3>Machine Learning Specialization</h3>
+            <span class="cert-issuer">DeepLearning.AI / Coursera</span>
+            <span class="cert-date">2024</span>
+          </div>
+          <div class="cert-card glass-card reveal-up delay-2">
+            <div class="cert-ribbon">Verified</div>
+            <div class="cert-icon">⛓️</div>
+            <h3>Blockchain Developer Certification</h3>
+            <span class="cert-issuer">Blockchain Council</span>
+            <span class="cert-date">2023</span>
+          </div>
+          <div class="cert-card glass-card reveal-up delay-3">
+            <div class="cert-ribbon">Verified</div>
+            <div class="cert-icon">🔐</div>
+            <h3>Ethical Hacking Essentials</h3>
+            <span class="cert-issuer">EC-Council</span>
+            <span class="cert-date">2023</span>
+          </div>
+          <div class="cert-card glass-card reveal-up delay-4">
+            <div class="cert-ribbon">Verified</div>
+            <div class="cert-icon">⚛️</div>
+            <h3>React Developer Certificate</h3>
+            <span class="cert-issuer">Meta / Coursera</span>
+            <span class="cert-date">2023</span>
+          </div>
+          <div class="cert-card glass-card reveal-up delay-5">
+            <div class="cert-ribbon">Verified</div>
+            <div class="cert-icon">🐍</div>
+            <h3>Python for Data Science</h3>
+            <span class="cert-issuer">IBM / Coursera</span>
+            <span class="cert-date">2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section services-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">07. Services</span>
+          <h2 class="section-title">What I <span class="gradient-text">Offer</span></h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card glass-card reveal-up">
+            <div class="service-icon-wrap">🌐</div>
+            <h3>Web Development</h3>
+            <p>Full-stack web applications with modern frameworks, responsive design, and optimized performance for all devices.</p>
+            <ul>
+              <li>React / Next.js Frontend</li>
+              <li>Node.js / REST APIs</li>
+              <li>Database Design</li>
+            </ul>
+          </div>
+          <div class="service-card glass-card reveal-up delay-1">
+            <div class="service-icon-wrap">🤖</div>
+            <h3>AI Solutions</h3>
+            <p>Custom machine learning models, NLP applications, and AI-powered features integrated seamlessly into your product.</p>
+            <ul>
+              <li>ML Model Training</li>
+              <li>NLP & Text Analysis</li>
+              <li>Computer Vision</li>
+            </ul>
+          </div>
+          <div class="service-card glass-card reveal-up delay-2">
+            <div class="service-icon-wrap">⛓️</div>
+            <h3>Blockchain Development</h3>
+            <p>Smart contract development, DApp creation, and blockchain integration for transparent and secure systems.</p>
+            <ul>
+              <li>Solidity Smart Contracts</li>
+              <li>DApp Development</li>
+              <li>NFT & Token Systems</li>
+            </ul>
+          </div>
+          <div class="service-card glass-card reveal-up delay-3">
+            <div class="service-icon-wrap">🎨</div>
+            <h3>UI/UX Design</h3>
+            <p>User-centered interface design with attention to accessibility, aesthetics, and delightful micro-interactions.</p>
+            <ul>
+              <li>Figma Prototyping</li>
+              <li>Design Systems</li>
+              <li>Responsive UI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="section test-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">08. Testimonials</span>
+          <h2 class="section-title">Client <span class="gradient-text">Stories</span></h2>
+        </div>
+        <div class="test-slider reveal-up delay-1">
+          <div class="test-track" id="testTrack">
+            <div class="test-card glass-card">
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"Archit delivered our e-commerce platform 2 weeks ahead of schedule. His attention to detail and code quality are exceptional. The site performs flawlessly under heavy traffic."</p>
+              <div class="test-author">
+                <div class="test-avatar">RK</div>
+                <div>
+                  <strong>Rohan Kapoor</strong>
+                  <small>CEO, ShopEase India</small>
+                </div>
+              </div>
+            </div>
+            <div class="test-card glass-card">
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"The AI resume analyzer Archit built for us has transformed our HR workflow. We process 10x more applications with better accuracy. Truly innovative work!"</p>
+              <div class="test-author">
+                <div class="test-avatar">PD</div>
+                <div>
+                  <strong>Priya Desai</strong>
+                  <small>HR Director, HireRight Technologies</small>
+                </div>
+              </div>
+            </div>
+            <div class="test-card glass-card">
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"Our blockchain voting system is bulletproof thanks to Archit's smart contract expertise. Zero vulnerabilities found in the audit. Highly recommend for any Web3 project."</p>
+              <div class="test-author">
+                <div class="test-avatar">AM</div>
+                <div>
+                  <strong>Anuj Mehta</strong>
+                  <small>CTO, VoteChain Solutions</small>
+                </div>
+              </div>
+            </div>
+            <div class="test-card glass-card">
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"As a startup founder, I needed someone who could handle both the technical heavy-lifting and communicate clearly with non-technical stakeholders. Archit excelled at both."</p>
+              <div class="test-author">
+                <div class="test-avatar">SJ</div>
+                <div>
+                  <strong>Sara Joshi</strong>
+                  <small>Founder, HealthSync App</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="test-controls">
+            <button class="test-btn" id="testPrev" aria-label="Previous">←</button>
+            <div class="test-dots" id="testDots"></div>
+            <button class="test-btn" id="testNext" aria-label="Next">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag">09. Contact</span>
+          <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <p class="contact-lead">Have a project in mind? Let's build something amazing together. I'm always open to discussing new opportunities.</p>
+            <div class="contact-items">
+              <div class="contact-item">
+                <div class="contact-item-icon">📧</div>
+                <div>
+                  <span>Email</span>
+                  <strong>architshah2017@gmail.com</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <div>
+                  <span>Location</span>
+                  <strong>Anand, Gujarat, India</strong>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-item-icon">🕐</div>
+                <div>
+                  <span>Availability</span>
+                  <strong>Open to Work · IST</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form glass-card reveal-right" id="contactForm" novalidate>
+            <div class="form-group">
+              <input type="text" id="formName" placeholder=" " required />
+              <label for="formName">Your Name</label>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="formEmail" placeholder=" " required />
+              <label for="formEmail">Email Address</label>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <input type="text" id="formSubject" placeholder=" " required />
+              <label for="formSubject">Subject</label>
+              <span class="form-error" id="subjectError"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="formMessage" rows="5" placeholder=" " required></textarea>
+              <label for="formMessage">Your Message</label>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full magnetic">
+              <span id="submitText">Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <span>✅</span> Message sent successfully! I'll get back to you within 24 hours.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><span class="logo-bracket">&lt;</span>AS<span class="logo-bracket">/&gt;</span></div>
+          <p>Full Stack Developer · AI Enthusiast · Blockchain Developer building the future, one commit at a time.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="footer-social-links">
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="mailto:archit@example.com">Email</a>
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Archit Shah. Crafted with ❤️ & ☕</p>
+        <p class="footer-note">Built with HTML · CSS · Vanilla JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
